@@ -6,15 +6,6 @@ Prof. Dr. R.D. Gill
 H. Rhezouani BSc
 
 Table of Contents
-1. The project
-  1.1. Reason for this project
-  1.2. Roulette in Holland Casino
-  1.3. The d'Alembert system
-2. H
-3
-4
-5. Credits
-6. License
 
 %UNDER CONSTRUCTION
 
