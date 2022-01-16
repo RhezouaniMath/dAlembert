@@ -295,12 +295,41 @@ Matlab files for simulating the d'Alembert strategy in roulette.
     
   2.14. Distr.m
   
+    The function Distr.m can be used to aggregate and organize the probabilities in a probability
+    row vector for the capital/stake-levels in such a way that we get a probability row vector
+    for the capital-levels.
+    
+    The input variable is a probability row vector for the capital/stake levels.
+    The output variable is a probability row vector for the capital levels.
+  
   2.15. DistrHC.m
+  
+    The function DistrHC.m is an adapted version of Distr.m. This adapted version can be used 
+    when we deal with the Holland Casino policy for zero outcomes. The only real difference 
+    between Distr.m and DistrHC.m is that DistrHC.m assumes that sub units are used to express
+    capital and stake. (Note: 1 unit = 2 sub units.)
   
   2.16. counting.m
   
+    The function counting.m can be used to determine the (cumalative) frequency of a number in
+    a column vector. The input variables are the column vector and the number. The output is the
+    frequency and cumulative frequency of that number in the column vector.
+  
   2.17. conditionalaverage.m
   
+    The function conditionalaverage.m can be used to determine the average of all the observations
+    that are above or below a certain value y.
+    
+    Input:
+    A column vector of observations (x)
+    A certain value (y)
+    
+    Output:
+    The average of all observations below y (ccL)
+    The average of all observations below or equal to y (ccl)
+    The average of all observations above or equal to y (cch)
+    The average of all observations above y (ccH)
+    
   2.18. sumfinalcapital.m
   
 3. Credits
