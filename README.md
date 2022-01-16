@@ -93,6 +93,21 @@ Matlab files for simulating the d'Alembert strategy in roulette.
     This coupling is independent and it has the same marginal distributions as the original
     processes
     
+  1.5. The roulette games as Markov process
+  
+    It is possible to model the capital/stake-levels of the two simultaneous games as a 
+    Markov chain with a transition matrix and an initial distribution. This model enables 
+    us to compute exactly the distribution of the final capitals and to use that 
+    distribution to compute all kinds of probabilistic properties of the final capitals.
+  
+    This results in some beautiful concrete results for a single game. However, we did not 
+    succeed in doing the computations for the two games simultaneously, because the arrays 
+    turn out to be too large to work with. Luckily, by performing simulations we can still 
+    get some insights into the distribution of the total final capital for the two 
+    simultaneous games. The memory issues with large arrays may motivate future research 
+    into refining the coupling idea and into the computational use of sparse arrays for the
+    topics of this master thesis project.
+  
 2. The MATLAB files
   
   2.1. simultaneous.m
@@ -209,6 +224,19 @@ Matlab files for simulating the d'Alembert strategy in roulette.
   
   2.10. Pmatrix.m
   
+    This function can be used for the construction of a Markov chain transition
+    matrix for a single game. The states of this Markov chain are the capital/stake-pairs.
+    
+    We assume that the player uses the d'Alembert strategy in the way that is mentioned
+    above (so with the default parameters for start capital, capital treshold, and so on).
+    
+    Index 1 stands for capital/stake 0, index 2 stands for capital/stake 1, 
+    and so on.
+    
+    Parameters:
+    m = maximal capital + 1
+    n = maximal stake + 1
+    
   2.11. PmatrixHC.m
   
   2.12. PsimHC.m
