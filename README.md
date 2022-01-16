@@ -237,9 +237,31 @@ Matlab files for simulating the d'Alembert strategy in roulette.
     m = maximal capital + 1
     n = maximal stake + 1
     
+    The use of this MATLAB function results in an 4D array. You have to reshape this
+    array in order to get the transition matrix.
+    
   2.11. PmatrixHC.m
   
+    PmatrixHC.m is an adaptation of Pmatrix.m to the Holland Casino policy for treating
+    zero outcomes. 
+    
+    The output variables and the parameters are expressed in sub units.
+    Each unit (of 50 euros) amounts to two sub units (of 25 euros each).
+  
   2.12. PsimHC.m
+  
+    This function is meant for the construction of a Markov chain transition matrix for
+    the two games simultaneously. However, we encountered memory issues with this 
+    function.
+    
+    We have tried to solve these memory issues by using sparse arrays. For this purpose 
+    we have tried to use ndSparse, a class written by Matt Jocobson, a research scientist 
+    at Xoran Technologies, which is a company for CT scanners in Michigan, US. This 
+    software can be found on 
+    
+    https://nl.mathworks.com/matlabcentral/fileexchange/29832-n-dimensional-sparse-arrays 
+    
+    (including its license). Unfortunately, we did not succeed in making this solution work.
   
   2.13. initialdistribution.m
   
