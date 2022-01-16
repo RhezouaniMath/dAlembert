@@ -281,5 +281,5 @@ Matlab files for simulating the d'Alembert strategy in roulette.
 
 5. Contact information
 
-  You can contact Rhezouani H via electronic mail: 
+  You can contact Hamid Rhezouani via electronic mail: 
   hamid_pet AT hotmail DOT com
