@@ -193,6 +193,21 @@ Matlab files for simulating the d'Alembert strategy in roulette.
   
   2.9. dalembertstatistical012adapted.m
   
+  This function is meant for doing multiple simulations of the X-,Y-, and
+coupled-Y-games, and to collect a data set (based on simulations) of 
+associated features of these games:
+- final capital levels of (X,Y) and their sum (the total final capital);
+- final capital levels of the coupling, and their sum;
+- number of difference between original (X,Y) and coupling;
+- 'final distance' from origin of corresponding random walks,
+- position random walk = net number of wins.
+CXfinal: vector of final capital levels w.r.t X;
+CYfinal: vector of final capital levels w.r.t Y;
+CTfinal = CXfinal + CYfinal = vector of total final capital levels;
+hatCXfinal, hatCYfinal, hatCTfinal are defined similarily, but based on
+coupling of (X,Y);
+each entry of such a vector represents 
+one game of (at most) tstop rounds.
   
   
   2.10. Pmatrix.m
