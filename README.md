@@ -263,8 +263,36 @@ Matlab files for simulating the d'Alembert strategy in roulette.
     
     (including its license). Unfortunately, we did not succeed in making this solution work.
   
+    The parameter h is used for choosing the casino policy: 
+    1) h=1 stands for treating zero outcomes as regular losses.
+    2) h=2 stands for handling zero outcomes in accordance to the Holland Casino policy.
+       (We assume that the player always chooses to share half of his stake with the house.)
+       
   2.13. initialdistribution.m
   
+    The client starts with a start capital of 25 units and a start capital of 1 unit,
+    We model this in our Markov chain model with an initial distribution 
+    
+    (0,0,...,0,1,0,...,0) 
+    
+    where the component for (capital,stake)=(25,1) equals 1, and all the other components
+    equal zero.
+    
+    The MATLAB-function initialdistribution.m can be used for constructing such an inital
+    distribution. The parameters for this function are m (maximal capital), n (maximal stake),
+    startC (start capital), startS(start stake). The output variable is a matrix of the form
+    
+    0 ... 0 0 0 ... 0
+      ...  ...  ... 0
+    0 ... 0 0 0 ... 0
+    0 ... 0 1 0 ... 0
+    0 ... 0 0 0 ... 0
+    0 ...  ...  ... 0
+    0 ... 0 0 0 ... 0
+    
+    You have to reshape this matrix in order to get an initial distribution in the form of
+    a row vector.
+    
   2.14. Distr.m
   
   2.15. DistrHC.m
