@@ -1,14 +1,6 @@
 # dAlembert
 Matlab files for simulating the d'Alembert strategy in roulette.
 
-Authors: 
-Prof. Dr. R.D. Gill
-H. Rhezouani BSc
-
-Table of Contents
-
-%UNDER CONSTRUCTION
-
 1. The project
 
   1.1. The reason for this project
@@ -73,7 +65,7 @@ Table of Contents
     - The player starts with a unit bet. 
     - After every loss, the player increases the bet by one unit.
     - After every win, the player decreases the bet by one unit, 
-    - unless the size of the bet is already one unit.
+      unless the size of the bet is already one unit.
 
     The client plays two simultaneous games: red/black and low/high. 
 
@@ -90,7 +82,7 @@ Table of Contents
     However, we can construct an independent coupling of these processes in order to 
     approximate the orignal two simultaneous games. We do that in the following way:
     - Replace the `old zero' in one of the processes by an independent `new zero'. That is, 
-      (repeatedly) flip an independent (unfair) coin to decide for one of the processes in 
+      repeatedly flip an independent (unfair) coin to decide for one of the processes in 
       which rounds there is a zero outcome and for which rounds there is no zero outcome.
     - Consider for each round whether this coin tells us if there is a zero or not. 
       If there is a (new) zero, then this zero will be the new outcome and this new outcome 
@@ -101,4 +93,131 @@ Table of Contents
     This coupling is independent and it has the same marginal distributions as the original
     processes
     
-    %UNDER CONSTRUCTION
+2. The MATLAB files
+  
+  2.1. simultaneous.m
+  
+    This m-file can be used to simulate one evening in which the client plays two
+    simultaneous games: red/black and low/high. The vector X represents the outcomes of the
+    red/black game, the vector Y represents the outcomes of the low/high game, and N is a
+    parameter for the number of rounds being played.
+    
+  2.2. dalembert012.m
+
+    This m-file can be used to simulate the capital/stake levels in one evening of roulette.
+    The client plays two simultaneous games: red/black and low/high. For each of these games
+    he uses two seperate pockets of money. He uses the d'Alembert strategy for choosing his
+    stakes and he stops when the maximum number of rounds is reachedor when his capital 
+    falls below a certain treshold.
+    
+    This MATLAB function uses simultaneous.m.
+
+    Parameters:
+    
+    tstop     = maximum number of rounds being played
+    Ctreshold = the capital treshold mentioned above
+    Cstart    = start capital
+
+    Output variables:
+    
+    The vector CX represents the capital levels in each round of the red/black-game.
+    The vector SX represents the stake levels in each round of the red/black-game.
+    The vector CY represents the capital levels in each round of the low/high-game.
+    The vector SY represents the stake levels in each round of the low/high-game.
+    
+  2.3. dalembert012HC.m
+    
+    This MATLAB function has the same functionality as dalembert012.m. However, the
+    difference is the way in whicht zero outcomes are treated. In dalembert012.m zero 
+    outcomes are treated as regular losses. In dalembert012HC.m we use the Holland Casino 
+    policy for treating zero outcomes and we assume that the player always chooses to share 
+    half of his stake with the house when zero comes up.
+    
+    The output variables are expressed in sub units. Each unit (of 50 euros) amounts to two
+    sub units (of 25 euros each).
+    
+  2.4. dalembertstatistical012.m
+  
+    This MATLAB function runs dalembert012.m multiple times. Each time i, the final capital
+    levels are being stored in the ith entries of the vectors CXfinal and CYfinal. 
+    Vector CXfinal represents the final capital levels in the red/black-games, 
+    vector CYfinal represents the final capital levels in the low/high-games, 
+    and each entry i represents one time / evening in the casino. The storage of the final 
+    capital levels enables us to do statistical analysis.
+    
+    The parameter n is used for setting the number of times/evening we want to store.
+    
+  2.5. dalembertstatistical012HC.m
+  
+    This MATLAB function is an adaptation of dalembertstatistical012.m to the Holland 
+    Casino rule for treating zero outcomes. This function uses the program dalembert012HC.m.
+  
+  2.6. coupling.m
+  
+    This function can be used to construct an independent coupling of the simultaneous 
+    red/black- and low/high-games. This construction of an indepdent coupling is described 
+    in S1.4.
+    
+    Type in 
+    
+    N=21;
+    [X,Y] = simultaneous(N);
+    
+    to set the vectors X,Y equal to realisations of the simultaneous red/black- and
+    low/high-games. Then type in
+    
+    [hatX , hatY] = coupling(X,Y);
+    
+    in order to get the realisations of the corresponding coupling.
+  
+  2.7. countingdifferences.m
+  
+    Function for counting the number of different components between two vectors of equal
+    length.
+  
+  2.8. dalembert012adapted.m
+  
+    Two games are played: red/black (X) and low/high (Y).
+    
+    This function can be used for simulating random walks related to X,Y, coupled Y.
+    
+    Random walk: #wins - #losses.
+    
+    This function can be used for simulating capital/stake-levels of X, Y, coupled Y.
+    This function is an adaptation of dalembert012.m
+    
+    Cstart is the start capital. Each game has start capital Cstart.
+    Player always stops at/before time tstop.
+    Player always stops when capital falls below Ctreshold.
+    These rules also apply to the coupling (hatX , hatY).
+  
+  2.9. dalembertstatistical012adapted.m
+  
+  
+  
+  2.10. Pmatrix.m
+  
+  2.11. PmatrixHC.m
+  
+  2.12. PsimHC.m
+  
+  2.13. initialdistribution.m
+  
+  2.14. Distr.m
+  
+  2.15. DistrHC.m
+  
+  2.16. counting.m
+  
+  2.17. conditionalaverage.m
+  
+  2.18. sumfinalcapital.m
+  
+3. Credits
+
+4. License
+
+5. Contact information
+
+  You can contact Rhezouani H via electronic mail: 
+  hamid_pet AT hotmail DOT com
