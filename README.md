@@ -1,9 +1,15 @@
 # dAlembert
 Matlab files for simulating the d'Alembert strategy in roulette.
 
+
+
 Authors:
 Hamid Rhezouani BSc
 Prof. dr. Richard D. Gill
+
+
+
+January 17, 2022
 
 
 
@@ -379,5 +385,5 @@ III Credits
 
 5. Contact information
 
-    You can contact Hamid Rhezouani via electronic mail: 
+    You can contact Hamid Rhezouani BSc via electronic mail: 
     hamid_pet AT hotmail DOT com
