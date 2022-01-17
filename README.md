@@ -3,9 +3,10 @@ Matlab files for simulating the d'Alembert strategy in roulette.
 
 
 
-Authors:
-Hamid Rhezouani BSc
-Prof. dr. Richard D. Gill
+Authors
+
+    Hamid Rhezouani BSc
+    Prof. dr. Richard D. Gill
 
 
 
