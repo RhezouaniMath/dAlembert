@@ -375,9 +375,9 @@ III Credits
 
 4. License
 
-  These files are published under the GNU General Public License v3.0.
+    These files are published under the GNU General Public License v3.0.
 
 5. Contact information
 
-  You can contact Hamid Rhezouani via electronic mail: 
-  hamid_pet AT hotmail DOT com
+    You can contact Hamid Rhezouani via electronic mail: 
+    hamid_pet AT hotmail DOT com
