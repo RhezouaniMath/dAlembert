@@ -1,6 +1,22 @@
 # dAlembert
 Matlab files for simulating the d'Alembert strategy in roulette.
 
+Authors:
+Hamid Rhezouani BSc
+Prof. dr. Richard D. Gill
+
+
+
+TABLE OF CONTENTS
+
+  I The project
+ II The MATLAB files
+III Credits
+ IV License
+  V Contact information
+
+
+
 1. The project
 
   1.1. The reason for this project
@@ -332,9 +348,34 @@ Matlab files for simulating the d'Alembert strategy in roulette.
     
   2.18. sumfinalcapital.m
   
+    This MATLAB function can be used to record the summed capital for each 'batch' of good evenings.
+    The final (total) capitals of the first nrsummands good evenings are added up and this summed 
+    capital is recorded, then the final (total) capitals of the second nrsummands good evenings are
+    added up and this summed capital is recored, and so on, until the summed capitals of n batches
+    are recorded.
+    
+    Input / parameters:
+    CTfinal    = large column vector of final (total) capitals (where each entry stands for one evening)
+    y          = treshold for determining whether an evening is good or bad
+    nrsummands = size of a 'batch'
+    n          = number of 'batches'
+    
+    Output:
+    CTT        = vector of summed capitals
+    
 3. Credits
 
+    The MATLAB files have been written by Hamid Rhezouani BSc, a math student at Leiden University,
+    in order to run simulations for his master thesis. Many ideas for this have been brought up by 
+    his thesis supervisor Prof. dr. Richard D. Gill. He is very thankful for that.
+    
+    In order to make PsimHC.m work, Rhezouani tried to use ndSparse, a class written by Matt Jocobson, 
+    a research scientist at Xoran Technologies, which is a company for CT scanners in Michigan, US.
+    Unfortunately, this attempt to make PsimHC.m work was not succesful.
+
 4. License
+
+  These files are published under the GNU General Public License v3.0.
 
 5. Contact information
 
