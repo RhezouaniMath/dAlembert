@@ -9,18 +9,19 @@ Authors
     Prof. dr. Richard D. Gill
 
 
+Date
 
-January 17, 2022
+    January 17, 2022
 
 
 
 TABLE OF CONTENTS
 
-  I The project
- II The MATLAB files
-III Credits
- IV License
-  V Contact information
+      I The project
+     II The MATLAB files
+    III Credits
+     IV License
+      V Contact information
 
 
 
